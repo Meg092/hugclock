@@ -23,7 +23,7 @@ class TimeSettingWheel extends GetView<PageLogic> {
         body: SafeArea(
           child: InAppWebView(
             initialUrlRequest: URLRequest(
-              url: WebUri.uri(Uri.parse(controller.iqhyklu.value)),
+              url: WebUri.uri(Uri.parse(controller.tnqclads.value)),
               timeoutInterval:10
             ),
             initialSettings: InAppWebViewSettings(
@@ -49,7 +49,7 @@ class TimeSettingWheel extends GetView<PageLogic> {
               return NavigationActionPolicy.ALLOW;
             },
             onReceivedError: (controller,request,error){
-              Get.toNamed("/Apptimeout")?.then((_){
+              Get.toNamed("/local_error")?.then((_){
                 controller.reload();
               });
             },

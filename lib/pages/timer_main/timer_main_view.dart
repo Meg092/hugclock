@@ -16,7 +16,7 @@ class TimerMainPage extends StatefulWidget {
 class _TimerMainPageState extends State<TimerMainPage> {
   TimerMainLogic controller = Get.find<TimerMainLogic>();
 
-  void checkNetwork() async {
+  void dajgbsaa() async {
     final hadNetwork = await InternetConnectionChecker.instance.hasConnection;
     if (!hadNetwork) {
       Get.toNamed('/local_error');
@@ -26,7 +26,7 @@ class _TimerMainPageState extends State<TimerMainPage> {
   @override
   void initState() {
     // TODO: implement initState
-    checkNetwork();
+    dajgbsaa();
     super.initState();
   }
 

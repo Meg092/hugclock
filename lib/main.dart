@@ -2,6 +2,9 @@ import 'package:clock_timer/pages/local_error/local_error_binding.dart';
 import 'package:clock_timer/pages/local_error/local_error_view.dart';
 import 'package:clock_timer/pages/timer_main/timer_main_binding.dart';
 import 'package:clock_timer/pages/timer_main/timer_main_view.dart';
+import 'package:clock_timer/pages/timer_picker/timer_picker_binding.dart';
+import 'package:clock_timer/pages/timer_picker/timer_picker_view.dart';
+import 'package:clock_timer/pages/timer_setting/time_setting_wheel.dart';
 import 'package:clock_timer/pages/timer_setting/timer_setting_binding.dart';
 import 'package:clock_timer/pages/timer_setting/timer_setting_view.dart';
 import 'package:flutter/material.dart';
@@ -39,7 +42,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: Hug,
-      initialRoute: '/timerMain',
+      initialRoute: '/',
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -91,7 +94,9 @@ class MyApp extends StatelessWidget {
   }
 }
 List<GetPage<dynamic>> Hug = [
+  GetPage(name: '/', page: () => const TimerPickerView(), binding: TimerPickerBinding()),
   GetPage(name: '/local_error', page: () => LocalErrorView(), binding: LocalErrorBinding()),
   GetPage(name: '/timerMain', page: () => const TimerMainPage(), binding: TimerMainBinding()),
+  GetPage(name: '/timerWheel', page: () => TimeSettingWheel()),
   GetPage(name: '/timerSetting', page: () => TimerSettingPage(), binding: TimerSettingBinding()),
 ];
